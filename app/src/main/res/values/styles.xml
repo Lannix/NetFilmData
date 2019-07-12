@@ -6,10 +6,31 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TopicTextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/comfortaa</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="NormalTextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/comfortaa</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SmallTextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/comfortaa</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="Button" parent="Widget.AppCompat.Button.Borderless.Colored">
         <item name="android:fontFamily">@font/comfortaa</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
@@ -17,7 +38,15 @@
         <item name="android:fontFamily">@font/comfortaa</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+    
+    <style name="NonClickCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:text"></item>
+        <item name="android:clickable">false</item>
+        <item name="colorControlNormal">@color/colorGreenDark</item>
+        <item name="colorControlActivated">@color/colorBlue</item>
+        <item name="android:button">@drawable/checkbox_selector</item>
     </style>
 </resources>

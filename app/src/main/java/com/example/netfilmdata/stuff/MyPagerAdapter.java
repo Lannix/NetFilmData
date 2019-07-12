@@ -5,10 +5,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.netfilmdata.fragment.Page_0;
+import com.example.netfilmdata.fragment.Page_1;
 
 public class MyPagerAdapter extends FragmentStatePagerAdapter {
 
-    private static final int NUM_PAGES = 1;
+    public static final int NUM_PAGES = 2;
 
     public MyPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -19,8 +20,10 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
         switch (position) {
             case 0:
                 return new Page_0();
+            case 1:
+                return new Page_1();
             default:
-                return null;
+                return new Page_0();
         }
     }
 
