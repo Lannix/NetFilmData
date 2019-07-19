@@ -1,4 +1,4 @@
-package com.example.netfilmdata.fragment;
+package com.lannix.netfilmdata.fragment;
 
 import me.saket.inboxrecyclerview.page.ExpandablePageLayout;
 

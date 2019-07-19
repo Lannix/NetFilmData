@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 8 items (2 items in 1 object) -->
+    <array name="recycle_strings">
+        <item>@string/lorem_ipsum_very_small</item>
+        <item>@string/lorem_ipsum_small</item>
+        <item>@string/lorem_ipsum_very_small</item>
+        <item>@string/lorem_ipsum_small</item>
+        <item>@string/lorem_ipsum_very_small</item>
+        <item>@string/lorem_ipsum_small</item>
+        <item>@string/lorem_ipsum_very_small</item>
+        <item>@string/lorem_ipsum_small</item>
+        <item>@string/lorem_ipsum_very_small</item>
+        <item>@string/lorem_ipsum_small</item>
+        <item>@string/lorem_ipsum_very_small</item>
+        <item>@string/lorem_ipsum_small</item>
+        <item>@string/lorem_ipsum_very_small</item>
+        <item>@string/lorem_ipsum_small</item>
+        <item>@string/lorem_ipsum_very_small</item>
+        <item>@string/lorem_ipsum_small</item>
+    </array>
+</resources>

@@ -28,5 +28,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.10'
     implementation 'me.saket:inboxrecyclerview:1.0.0-rc1'
-    implementation 'org.simpleframework:simple-xml:2.7.1'
 }

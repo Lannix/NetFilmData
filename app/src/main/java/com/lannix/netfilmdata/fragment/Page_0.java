@@ -1,4 +1,4 @@
-package com.example.netfilmdata.fragment;
+package com.lannix.netfilmdata.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.netfilmdata.R;
+import com.lannix.netfilmdata.R;
 
 public class Page_0 extends Fragment {
 

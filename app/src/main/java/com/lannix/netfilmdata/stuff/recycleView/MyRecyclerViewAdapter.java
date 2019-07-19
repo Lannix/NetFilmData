@@ -1,4 +1,4 @@
-package com.example.netfilmdata.stuff.recycleView;
+package com.lannix.netfilmdata.stuff.recycleView;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.netfilmdata.R;
+import com.lannix.netfilmdata.R;
 
 import java.util.ArrayList;
 
@@ -43,7 +43,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public int getItemCount() {
         return data.size();
     }
-
 
     public static class MyRecycleViewHolder extends RecyclerView.ViewHolder {
         private TextView topicTextView;

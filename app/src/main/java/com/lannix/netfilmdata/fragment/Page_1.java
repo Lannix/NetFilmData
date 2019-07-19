@@ -1,4 +1,4 @@
-package com.example.netfilmdata.fragment;
+package com.lannix.netfilmdata.fragment;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,12 +12,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.netfilmdata.R;
+import com.lannix.netfilmdata.R;
+import com.lannix.netfilmdata.stuff.recycleView.ListObject;
+import com.lannix.netfilmdata.stuff.recycleView.MyRecyclerViewAdapter;
 
-import org.simpleframework.xml.core.Persister;
-
-import java.io.Reader;
-import java.io.StringReader;
+import java.util.ArrayList;
 
 import me.saket.inboxrecyclerview.InboxRecyclerView;
 import me.saket.inboxrecyclerview.dimming.TintPainter;
@@ -41,11 +40,21 @@ public class Page_1 extends Fragment {
         recyclerView.setExpandablePage(pageLayout);
         recyclerView.setTintPainter(TintPainter.uncoveredArea(Color.BLUE, 0.65F));
 
-        String xml = getResources().getXml(R.xml.recycler_data).toString();
-        Persister serializer = new Persister();
-        getResources().getS
+        MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(context, getDataList(context));
+        adapter.setHasStableIds(true);
+        recyclerView.setAdapter(adapter);
 
         return view;
+    }
+
+    private ArrayList<ListObject> getDataList(Context context) {
+        String strings[] = context.getResources().getStringArray(R.array.recycle_strings);
+        ArrayList<ListObject> listObjects = new ArrayList<>();
+        for (int i = 0; i < strings.length / 2; i += 2) {
+            ListObject listObject = new ListObject(strings[i], strings[i + 1]);
+            listObjects.add(listObject);
+        }
+        return listObjects;
     }
 
     @Override

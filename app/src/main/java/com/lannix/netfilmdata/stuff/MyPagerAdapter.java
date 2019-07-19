@@ -1,11 +1,11 @@
-package com.example.netfilmdata.stuff;
+package com.lannix.netfilmdata.stuff;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.netfilmdata.fragment.Page_0;
-import com.example.netfilmdata.fragment.Page_1;
+import com.lannix.netfilmdata.fragment.Page_0;
+import com.lannix.netfilmdata.fragment.Page_1;
 
 public class MyPagerAdapter extends FragmentStatePagerAdapter {
 

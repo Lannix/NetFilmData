@@ -1,4 +1,4 @@
-package com.example.netfilmdata.stuff.recycleView;
+package com.lannix.netfilmdata.stuff.recycleView;
 
 public class ListObject {
 

@@ -1,4 +1,4 @@
-package com.example.netfilmdata.activity;
+package com.lannix.netfilmdata.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
@@ -8,14 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.netfilmdata.R;
-import com.example.netfilmdata.fragment.MainActivityInterface;
-import com.example.netfilmdata.stuff.MyPagerAdapter;
+import com.lannix.netfilmdata.R;
+import com.lannix.netfilmdata.fragment.MainActivityInterface;
+import com.lannix.netfilmdata.stuff.MyPagerAdapter;
 import com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator;
 
 import me.saket.inboxrecyclerview.page.ExpandablePageLayout;
 
-import static com.example.netfilmdata.stuff.MyPagerAdapter.NUM_PAGES;
+import static com.lannix.netfilmdata.stuff.MyPagerAdapter.NUM_PAGES;
 
 public class MainActivity extends AppCompatActivity implements MainActivityInterface {
 
