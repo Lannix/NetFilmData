@@ -1,4 +1,4 @@
-package com.example.netfilmdata;
+package com.lannix.netfilmdata;
 
 import org.junit.Test;
 
