@@ -11,6 +11,7 @@ import android.widget.Button;
 import com.lannix.netfilmdata.R;
 import com.lannix.netfilmdata.fragment.MainActivityInterface;
 import com.lannix.netfilmdata.stuff.MyPagerAdapter;
+import com.lannix.netfilmdata.stuff.OnBackPressedInterface;
 import com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator;
 
 import me.saket.inboxrecyclerview.page.ExpandablePageLayout;
@@ -63,6 +64,9 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
 
     @Override
     public void onBackPressed() {
+        if (pagerAdapter instanceof OnBackPressedInterface) {
+            ((OnBackPressedInterface) pagerAdapter).onBackPressedAction();
+        }
         if (myPager.getCurrentItem() == 0) {
             super.onBackPressed();
         } else {

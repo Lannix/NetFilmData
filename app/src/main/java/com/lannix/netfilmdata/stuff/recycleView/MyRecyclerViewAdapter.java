@@ -22,6 +22,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public MyRecyclerViewAdapter(Context context, ArrayList<ListObject> data) {
         inflater = LayoutInflater.from(context);
         this.data = data;
+        setHasStableIds(true);
     }
 
     @NonNull
@@ -33,10 +34,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     @Override
     public void onBindViewHolder(@NonNull MyRecycleViewHolder holder, int position) {
-        ListObject listObject = data.get(position);
-
-        holder.getTopicTextView().setText(listObject.topicText);
-        holder.getInformationTextView().setText(listObject.informationText);
+        holder.fill(data.get(position));
     }
 
     @Override
@@ -54,6 +52,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             topicTextView = itemView.findViewById(R.id.TopicTextView);
             informationTextView = itemView.findViewById(R.id.InformationTextView);
             checkBox = itemView.findViewById(R.id.CheckBox);
+        }
+
+        public void fill(ListObject listObject) {
+            topicTextView.setText(listObject.topicText);
+            informationTextView.setText(listObject.informationText);
         }
 
         public TextView getTopicTextView() {
