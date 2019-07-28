@@ -11,39 +11,32 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.lannix.netfilmdata.R;
+import com.lannix.netfilmdata.stuff.OnBackPressedInterface;
 import com.lannix.netfilmdata.stuff.recycleView.ListObject;
 import com.lannix.netfilmdata.stuff.recycleView.MyRecyclerViewAdapter;
 
 import java.util.ArrayList;
 
-import me.saket.inboxrecyclerview.InboxRecyclerView;
-import me.saket.inboxrecyclerview.dimming.TintPainter;
-import me.saket.inboxrecyclerview.page.ExpandablePageLayout;
-
-public class Page_1 extends Fragment {
+public class Page_1 extends Fragment implements OnBackPressedInterface {
 
     private Context context;
     private MainActivityInterface mainActivityInterface;
+    private RecyclerView recyclerView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_page_1, container, false);
 
-        InboxRecyclerView recyclerView = view.findViewById(R.id.inbox_recyclerview);
+        recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setHasFixedSize(true);
 
-        ExpandablePageLayout pageLayout = mainActivityInterface.getExpandablePageLayout();
-        recyclerView.setExpandablePage(pageLayout);
-        recyclerView.setTintPainter(TintPainter.uncoveredArea(Color.BLUE, 0.65F));
-
         MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(context, getDataList(context));
-        adapter.setHasStableIds(true);
         recyclerView.setAdapter(adapter);
-
         return view;
     }
 
@@ -67,5 +60,10 @@ public class Page_1 extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+    }
+
+    @Override
+    public void onBackPressedAction() {
+        //todo
     }
 }

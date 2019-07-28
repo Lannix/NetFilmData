@@ -11,9 +11,9 @@ import android.widget.Button;
 import com.lannix.netfilmdata.R;
 import com.lannix.netfilmdata.fragment.MainActivityInterface;
 import com.lannix.netfilmdata.stuff.MyPagerAdapter;
+import com.lannix.netfilmdata.stuff.OnBackPressedInterface;
 import com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator;
 
-import me.saket.inboxrecyclerview.page.ExpandablePageLayout;
 
 import static com.lannix.netfilmdata.stuff.MyPagerAdapter.NUM_PAGES;
 
@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
     private IndefinitePagerIndicator pagerIndicator;
     private Button backButton;
     private Button nextButton;
-    private ExpandablePageLayout expandablePageLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,20 +57,17 @@ public class MainActivity extends AppCompatActivity implements MainActivityInter
             }
         });
 
-        expandablePageLayout = findViewById(R.id.inbox_page);
     }
 
     @Override
     public void onBackPressed() {
+        if (pagerAdapter instanceof OnBackPressedInterface) {
+            ((OnBackPressedInterface) pagerAdapter).onBackPressedAction();
+        }
         if (myPager.getCurrentItem() == 0) {
             super.onBackPressed();
         } else {
             myPager.setCurrentItem(myPager.getCurrentItem() - 1);
         }
-    }
-
-    @Override
-    public ExpandablePageLayout getExpandablePageLayout() {
-        return expandablePageLayout;
     }
 }
