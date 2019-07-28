@@ -62,8 +62,8 @@
         </FrameLayout>
     </LinearLayout>
 
-    <me.saket.inboxrecyclerview.page.ExpandablePageLayout
-        android:id="@+id/inbox_page"
+    <View
+        android:id="@+id/expandable_page"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

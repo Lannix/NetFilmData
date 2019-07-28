@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -21,33 +20,23 @@ import com.lannix.netfilmdata.stuff.recycleView.MyRecyclerViewAdapter;
 
 import java.util.ArrayList;
 
-import me.saket.inboxrecyclerview.InboxRecyclerView;
-import me.saket.inboxrecyclerview.dimming.TintPainter;
-import me.saket.inboxrecyclerview.page.ExpandablePageLayout;
-
 public class Page_1 extends Fragment implements OnBackPressedInterface {
 
     private Context context;
     private MainActivityInterface mainActivityInterface;
-    private ExpandablePageLayout pageLayout;
-    private InboxRecyclerView recyclerView;
+    private RecyclerView recyclerView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_page_1, container, false);
 
-        recyclerView = view.findViewById(R.id.inbox_recyclerview);
+        recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setHasFixedSize(true);
 
-        pageLayout = mainActivityInterface.getExpandablePageLayout();
-        recyclerView.setExpandablePage(pageLayout);
-        recyclerView.setTintPainter(TintPainter.uncoveredArea(Color.BLUE, 0.65F));
-
         MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(context, getDataList(context));
         recyclerView.setAdapter(adapter);
-
         return view;
     }
 
@@ -75,8 +64,6 @@ public class Page_1 extends Fragment implements OnBackPressedInterface {
 
     @Override
     public void onBackPressedAction() {
-        if (pageLayout.isExpandedOrExpanding()) {
-            recyclerView.collapse();
-        }
+        //todo
     }
 }
